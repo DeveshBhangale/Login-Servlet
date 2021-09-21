@@ -32,10 +32,10 @@ public class FirstServlet extends HttpServlet {
 		String user = req.getParameter("user");
 		String pwd = req.getParameter("password");
 		
-		String userID = getServletConfig().getInitParameter("user");
-		String password = getServletConfig().getInitParameter("password");
+//		String userID = getServletConfig().getInitParameter("user");
+//		String password = getServletConfig().getInitParameter("password");
 		
-		if(userID.equals(user) && password.equals(pwd)) {
+		if(/*userID.equals(user) && password.equals(pwd) && */ user.matches("^[A-Z][a-z]{2,}")) {
 			req.setAttribute("user", user);
 			req.getRequestDispatcher("LoginSuccess.jsp").forward(req, resp);
 		}else {
